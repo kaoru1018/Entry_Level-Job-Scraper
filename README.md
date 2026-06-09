@@ -1,4 +1,4 @@
-# -OK_jobs_scraper
+# Entry_Level-Job_scraper
 "Automated job scraping and analysis tool for 'No Experience Required' jobs from Stanby. It automatically filters ads, classifies work styles (Remote/Commute), and extracts salary info into a clean CSV."
 # Stanby Job Scraper & Analyzer
 
