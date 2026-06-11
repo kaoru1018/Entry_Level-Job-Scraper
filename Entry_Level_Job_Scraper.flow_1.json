@@ -1,0 +1,6 @@
+WebAutomation.LaunchChrome.LaunchChrome Url: $'''https://jp.stanby.com/search?q=未経験OK''' WindowState: WebAutomation.BrowserWindowState.Normal ClearCache: False ClearCookies: False WaitForPageToLoadTimeout: 60 Timeout: 60 PiPUserDataFolderMode: WebAutomation.PiPUserDataFolderModeEnum.AutomaticProfile TargetDesktop: $'''{\"DisplayName\":\"ローカル コンピューター\",\"Route\":{\"ServerType\":\"Local\",\"ServerAddress\":\"\"},\"DesktopType\":\"local\"}''' BrowserInstance=> Browser
+WebAutomation.ExtractData.ExtractList BrowserInstance: Browser Control: $'''html > body > div:eq(0) > div > div:eq(3) > main > div:eq(3) > div:eq(0) > div:eq(1) > div > div''' ExtractionParameters: {[$'''div > div > div:eq(0) > h2 > a''', $'''Href''', $''''''] } PostProcessData: False TimeoutInSeconds: 60 ExtractedData=> DataFromWebPage
+Excel.LaunchExcel.LaunchUnderExistingProcess Visible: True UseMachineLocale: False Instance=> ExcelInstance
+Excel.WriteToExcel.WriteCell Instance: ExcelInstance Value: DataFromWebPage Column: 1 Row: 1
+Excel.SaveExcel.SaveAs Instance: ExcelInstance DocumentFormat: Excel.ExcelFormat.OpenXmlWorkbook DocumentPath: $'''C:\\Users\\薫\\Desktop\\未経験OK_jobs.xlsx'''
+Excel.CloseExcel.CloseAndSave Instance: ExcelInstance
